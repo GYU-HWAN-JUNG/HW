@@ -1,0 +1,90 @@
+float x,y,z,a,b;
+void setup(){
+  size(480,320);
+  background(80,188,223);
+  strokeWeight(5);
+  x = 200;
+  y = 200;
+  z = 10;
+  quad(x-3*z,y+8*z,x+11*z,y+8*z, x+9*z,y, x-10,y); // body
+  fill(0,150,0);
+  rect(x,y,1.6*z,8*z);
+  rect(x+3.5*z,y,1.6*z,8*z);
+  rect(x+7*z,y,1.6*z,8*z); // stripe
+  fill(220,220,100);
+  arc(x+4*z,y-5*z,17*z,13*z,0-QUARTER_PI,PI+QUARTER_PI,OPEN); // the shape of the face
+  fill(250);
+  circle(x,0.5*y,8*z);
+  circle(x+8*z,0.5*y,8*z);
+  fill(0);
+  circle(x+z,0.5*(x+z),2*z);
+  circle(x+7*z,0.5*(x+z),2*z);
+  line(x,y-0.5*z,x+4*z,y+z);
+  line(x+4*z,y+z,x+8*z,y-0.5*z);
+  strokeWeight(0);
+  fill(255,192,203);
+  circle(x-1.5*z,y-3*z,2.5*z);
+  circle(x+9.5*z,y-3*z,2.5*z);
+  strokeWeight(5);
+  fill(220,220,100);
+  x = 190;
+  y = 270;
+  a = 174;
+  b = 205;
+  foot();
+  fill(220,220,100);
+  x += 100;
+  a += 100;
+  b += 100;
+  foot();
+  fill(220,220,100);
+  x = 180;
+  y = 220;
+  z = 30;
+  hand();
+  strokeWeight(5);
+  x = 300;
+  hand();
+  strokeWeight(0);
+  fill(250);
+  x = a = 70;
+  y = 50;
+  z = 30;
+  cloud();
+  x = 380;
+  a = 30;
+  cloud();
+  x = 40;
+  a = 260;
+  cloud();
+  x = 370;
+  a = 240;
+  cloud();
+}
+
+void foot(){
+  z = 50 ;
+  arc(x,y,z,z,0-QUARTER_PI,PI+QUARTER_PI,OPEN);
+  line(a,5*z,b,5*z);
+  fill(0);
+  arc(x,y,0.5*z,0.5*z,0-QUARTER_PI,PI+QUARTER_PI,OPEN);
+}
+
+void hand(){
+ circle(x,y,z);
+  strokeWeight(3);
+  line(x-5,y-15,x-5,y-5);
+  line(x,y-15,x,y-5);
+  line(x+5,y-15,x+5,y-5);
+}
+
+void cloud(){
+  rect(x,a,y,z);
+  arc(x+25,a+30,y,z,0,PI,OPEN);
+  arc(x+25,a+1,y,z,0-PI,0,OPEN);
+  arc(x+1,a+15,y-10,z,0.5*PI,1.5*PI,OPEN);
+  arc(x+50,a+15,y-10,z,0-0.5*PI,0.5*PI,OPEN);
+}
+  
+  
+ 
