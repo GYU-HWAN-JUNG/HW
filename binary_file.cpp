@@ -54,7 +54,7 @@ int main() {
     ofstream co("c.txt");
     if (!co) return -6;
     for (int i = 0; i < n; i++) {
-        co << i << "    " << rr[i] << "    " << i << "    " << RR[i] << endl;
+        co << i << "    " << rr[i] << "    " << RR[i] << endl;
     }
     co.close();
     return 123;
